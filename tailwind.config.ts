@@ -59,6 +59,11 @@ export default {
           DEFAULT: "hsl(var(--color-whatsapp))",
           dark: "hsl(var(--color-whatsapp-dark))",
         },
+        link: {
+          DEFAULT: "hsl(var(--link))",
+          hover: "hsl(var(--link-hover))",
+          visited: "hsl(var(--link-visited))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

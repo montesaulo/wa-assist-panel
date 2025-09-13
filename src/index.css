@@ -8,58 +8,67 @@
   :root {
     /* Core Brand Colors */
     --color-primary: 262 83% 66%; /* #8B5CF6 */
+    --color-primary-dark: 262 83% 58%; /* Darker variant for dark mode */
     --color-secondary: 220 39% 11%; /* #1F2937 */
     --color-success: 158 64% 52%; /* #10B981 */
-    --color-warning: 32 95% 44%; /* #F59E0B */
+    --color-success-dark: 158 64% 45%; /* Darker for dark mode */
+    --color-warning: 32 95% 50%; /* #F59E0B - Adjusted for better contrast */
+    --color-warning-dark: 32 95% 45%; /* Darker for dark mode */
     --color-error: 0 84% 60%; /* #EF4444 */
+    --color-error-dark: 0 84% 55%; /* Darker for dark mode */
     
     /* WhatsApp Brand */
     --color-whatsapp: 142 76% 36%; /* #25D366 */
-    --color-whatsapp-dark: 142 76% 26%;
+    --color-whatsapp-dark: 142 76% 32%;
     
-    /* Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    /* Light Theme - High Contrast */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 224 71% 4%; /* Very dark blue-gray */
     
-    --card: 0 0% 100%;
+    --card: 0 0% 100%; /* Pure white */
     --card-foreground: 224 71% 4%;
     
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
     
     --primary: var(--color-primary);
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 100%; /* Pure white text */
     
-    --secondary: 220 14% 96%;
-    --secondary-foreground: var(--color-secondary);
+    --secondary: 220 14% 96%; /* Very light gray */
+    --secondary-foreground: 220 39% 11%; /* Dark text */
     
     --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted-foreground: 220 9% 40%; /* Darker for better contrast */
     
-    --accent: 220 14% 96%;
-    --accent-foreground: var(--color-secondary);
+    --accent: 220 14% 95%; /* Slightly darker accent */
+    --accent-foreground: 220 39% 11%;
     
     --destructive: var(--color-error);
-    --destructive-foreground: 0 0% 98%;
-    
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: var(--color-primary);
+    --destructive-foreground: 0 0% 100%;
     
     --success: var(--color-success);
-    --success-foreground: 0 0% 98%;
+    --success-foreground: 0 0% 100%;
     
     --warning: var(--color-warning);
-    --warning-foreground: 0 0% 98%;
+    --warning-foreground: 0 0% 100%;
+    
+    --border: 220 13% 88%; /* More visible borders */
+    --input: 220 13% 88%;
+    --ring: var(--color-primary);
     
     /* Glassmorphism */
-    --glass-bg: 0 0% 100% / 0.8;
-    --glass-border: 220 13% 91% / 0.2;
+    --glass-bg: 0 0% 100% / 0.9;
+    --glass-border: 220 13% 88% / 0.3;
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* Links */
+    --link: var(--color-primary);
+    --link-hover: 262 83% 58%;
+    --link-visited: 282 83% 66%;
+    
+    /* Shadows - Enhanced for light mode */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.08);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.12), 0 2px 4px -2px rgb(0 0 0 / 0.12);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.12), 0 4px 6px -4px rgb(0 0 0 / 0.12);
     
     /* Animation */
     --transition-fast: 200ms ease;
@@ -68,71 +77,76 @@
     
     --radius: 0.5rem;
     
-    /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5% 26%;
+    /* Sidebar - Light */
+    --sidebar-background: 0 0% 99%; /* Almost white */
+    --sidebar-foreground: 220 39% 15%; /* Dark text */
     --sidebar-primary: var(--color-primary);
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 5% 96%;
-    --sidebar-accent-foreground: 240 6% 10%;
-    --sidebar-border: 220 13% 91%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 95%;
+    --sidebar-accent-foreground: 220 39% 11%;
+    --sidebar-border: 220 13% 88%;
     --sidebar-ring: var(--color-primary);
   }
 
   .dark {
-    /* Dark Theme */
-    --background: 224 71% 4%;
-    --foreground: 210 20% 98%;
+    /* Dark Theme - Perfect Contrast */
+    --background: 224 71% 4%; /* Very dark blue-gray */
+    --foreground: 210 20% 98%; /* Almost white */
     
-    --card: 224 71% 4%;
+    --card: 224 71% 6%; /* Slightly lighter than background */
     --card-foreground: 210 20% 98%;
     
-    --popover: 224 71% 4%;
+    --popover: 224 71% 6%;
     --popover-foreground: 210 20% 98%;
     
-    --primary: var(--color-primary);
-    --primary-foreground: 0 0% 98%;
+    --primary: var(--color-primary-dark);
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 215 28% 17%;
+    --secondary: 215 28% 20%; /* Darker secondary */
     --secondary-foreground: 210 20% 98%;
     
-    --muted: 215 28% 17%;
-    --muted-foreground: 217 11% 65%;
+    --muted: 215 28% 18%; /* Darker muted */
+    --muted-foreground: 217 11% 70%; /* Lighter for better contrast */
     
-    --accent: 215 28% 17%;
+    --accent: 215 28% 20%;
     --accent-foreground: 210 20% 98%;
     
-    --destructive: var(--color-error);
+    --destructive: var(--color-error-dark);
     --destructive-foreground: 210 20% 98%;
     
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: var(--color-primary);
-    
-    --success: var(--color-success);
+    --success: var(--color-success-dark);
     --success-foreground: 210 20% 98%;
     
-    --warning: var(--color-warning);
+    --warning: var(--color-warning-dark);
     --warning-foreground: 210 20% 98%;
     
-    /* Dark Glassmorphism */
-    --glass-bg: 224 71% 4% / 0.8;
-    --glass-border: 215 28% 17% / 0.2;
+    --border: 215 28% 20%; /* More visible dark borders */
+    --input: 215 28% 18%;
+    --ring: var(--color-primary-dark);
     
-    /* Dark Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    /* Dark Glassmorphism */
+    --glass-bg: 224 71% 4% / 0.9;
+    --glass-border: 215 28% 20% / 0.3;
+    
+    /* Dark Links */
+    --link: var(--color-primary-dark);
+    --link-hover: 262 83% 75%;
+    --link-visited: 282 83% 70%;
+    
+    /* Dark Shadows - Enhanced */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
     
     /* Dark Sidebar */
-    --sidebar-background: 240 6% 10%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: var(--color-primary);
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: var(--color-primary);
+    --sidebar-background: 224 71% 6%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: var(--color-primary-dark);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 28% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 28% 15%;
+    --sidebar-ring: var(--color-primary-dark);
   }
 }
 
@@ -144,10 +158,30 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
   }
   
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Link styles with perfect contrast */
+  a {
+    @apply text-foreground transition-colors duration-200;
+    color: hsl(var(--link));
+  }
+
+  a:hover {
+    color: hsl(var(--link-hover));
+  }
+
+  a:visited {
+    color: hsl(var(--link-visited));
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
 

@@ -175,24 +175,38 @@ export function AppSidebar() {
                     >
                       <NavLink 
                         to={item.url}
-                        className={cn(
-                          "flex items-center space-x-3 px-3 py-2 rounded-md",
-                          "hover:bg-sidebar-accent/50 transition-colors",
-                          isActive && "bg-sidebar-accent"
+                        className={({ isActive }) => cn(
+                          "flex items-center space-x-3 px-3 py-2 rounded-md transition-all duration-200",
+                          "hover:bg-sidebar-accent/70 focus:bg-sidebar-accent focus:outline-none focus:ring-2 focus:ring-sidebar-primary",
+                          isActive 
+                            ? "bg-sidebar-accent text-sidebar-primary font-medium shadow-sm" 
+                            : "text-sidebar-foreground hover:text-sidebar-accent-foreground"
                         )}
                       >
                         <item.icon className={cn(
-                          "h-4 w-4 shrink-0",
-                          isActive ? "text-sidebar-primary" : "text-sidebar-foreground"
+                          "h-4 w-4 shrink-0 transition-colors duration-200",
+                          currentPath === item.url 
+                            ? "text-sidebar-primary" 
+                            : "text-sidebar-foreground group-hover:text-sidebar-accent-foreground"
                         )} />
                         
                         {!isCollapsed && (
                           <>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-medium truncate">
+                              <p className={cn(
+                                "text-sm font-medium truncate transition-colors duration-200",
+                                currentPath === item.url 
+                                  ? "text-sidebar-primary" 
+                                  : "text-sidebar-foreground group-hover:text-sidebar-accent-foreground"
+                              )}>
                                 {item.title}
                               </p>
-                              <p className="text-xs text-sidebar-foreground/60 truncate">
+                              <p className={cn(
+                                "text-xs truncate transition-colors duration-200",
+                                currentPath === item.url 
+                                  ? "text-sidebar-primary/70" 
+                                  : "text-sidebar-foreground/60 group-hover:text-sidebar-accent-foreground/80"
+                              )}>
                                 {item.description}
                               </p>
                             </div>

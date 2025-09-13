@@ -91,43 +91,43 @@ export function AppHeader({ title, className }: AppHeaderProps) {
           {/* Search - Hidden on mobile */}
           <div className="hidden md:block relative max-w-sm flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Buscar mensagens, contatos..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 focus-ring"
-            />
+          <Input
+            type="search"
+            placeholder="Buscar mensagens, contatos..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-9 focus-ring bg-background text-foreground border-border placeholder:text-muted-foreground"
+          />
           </div>
         </div>
         
         {/* Right section - Actions */}
         <div className="flex items-center space-x-2">
           {/* Mobile search toggle */}
-          <Button variant="ghost" size="sm" className="md:hidden">
-            <Search className="h-4 w-4" />
+          <Button variant="ghost" size="sm" className="md:hidden focus-ring hover:bg-accent">
+            <Search className="h-4 w-4 text-foreground" />
           </Button>
           
           {/* Theme switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="focus-ring">
-                <ThemeIcon className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="focus-ring hover:bg-accent">
+                <ThemeIcon className="h-4 w-4 text-foreground" />
                 <span className="sr-only">Alternar tema</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-36">
-              <DropdownMenuItem onClick={() => setTheme('light')}>
-                <Sun className="mr-2 h-4 w-4" />
-                Claro
+            <DropdownMenuContent align="end" className="w-36 bg-popover border-border">
+              <DropdownMenuItem onClick={() => setTheme('light')} className="cursor-pointer hover:bg-accent focus:bg-accent">
+                <Sun className="mr-2 h-4 w-4 text-foreground" />
+                <span className="text-foreground">Claro</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme('dark')}>
-                <Moon className="mr-2 h-4 w-4" />
-                Escuro
+              <DropdownMenuItem onClick={() => setTheme('dark')} className="cursor-pointer hover:bg-accent focus:bg-accent">
+                <Moon className="mr-2 h-4 w-4 text-foreground" />
+                <span className="text-foreground">Escuro</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme('system')}>
-                <Monitor className="mr-2 h-4 w-4" />
-                Sistema
+              <DropdownMenuItem onClick={() => setTheme('system')} className="cursor-pointer hover:bg-accent focus:bg-accent">
+                <Monitor className="mr-2 h-4 w-4 text-foreground" />
+                <span className="text-foreground">Sistema</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -138,8 +138,8 @@ export function AppHeader({ title, className }: AppHeaderProps) {
             onOpenChange={setShowNotifications}
           >
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="relative focus-ring">
-                <Bell className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="relative focus-ring hover:bg-accent">
+                <Bell className="h-4 w-4 text-foreground" />
                 {unreadNotifications.length > 0 && (
                   <Badge 
                     variant="destructive" 
@@ -153,9 +153,9 @@ export function AppHeader({ title, className }: AppHeaderProps) {
                 </span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-80">
-              <div className="flex items-center justify-between p-3 border-b">
-                <h3 className="font-medium">Notificações</h3>
+            <DropdownMenuContent align="end" className="w-80 bg-popover border-border">
+              <div className="flex items-center justify-between p-3 border-b border-border">
+                <h3 className="font-medium text-foreground">Notificações</h3>
                 <Badge variant="secondary" className="text-xs">
                   {unreadNotifications.length} novas
                 </Badge>
@@ -223,26 +223,26 @@ export function AppHeader({ title, className }: AppHeaderProps) {
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuContent align="end" className="w-56 bg-popover border-border">
               <div className="flex items-center justify-start gap-2 p-2">
                 <div className="flex flex-col space-y-1 leading-none">
-                  <p className="font-medium">Administrador</p>
+                  <p className="font-medium text-foreground">Administrador</p>
                   <p className="text-xs text-muted-foreground">
                     admin@empresa.com
                   </p>
                 </div>
               </div>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <User className="mr-2 h-4 w-4" />
-                Perfil
+              <DropdownMenuSeparator className="bg-border" />
+              <DropdownMenuItem className="cursor-pointer hover:bg-accent focus:bg-accent">
+                <User className="mr-2 h-4 w-4 text-foreground" />
+                <span className="text-foreground">Perfil</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
-                Configurações
+              <DropdownMenuItem className="cursor-pointer hover:bg-accent focus:bg-accent">
+                <Settings className="mr-2 h-4 w-4 text-foreground" />
+                <span className="text-foreground">Configurações</span>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-destructive">
+              <DropdownMenuSeparator className="bg-border" />
+              <DropdownMenuItem className="text-destructive cursor-pointer hover:bg-destructive/10 focus:bg-destructive/10">
                 <LogOut className="mr-2 h-4 w-4" />
                 Sair
               </DropdownMenuItem>
