@@ -111,3 +111,56 @@ export interface WebSocketEvent {
   data: any;
   timestamp: number;
 }
+
+// Mass Messaging Types
+export interface Campaign {
+  id: string;
+  name: string;
+  status: "draft" | "scheduled" | "active" | "paused" | "completed" | "failed";
+  template: string;
+  contacts: Contact[];
+  scheduledAt?: number;
+  createdAt: number;
+  sentCount: number;
+  deliveredCount: number;
+  failedCount: number;
+  openRate: number;
+  clickRate: number;
+  antiBlockSettings: AntiBlockSettings;
+}
+
+export interface Template {
+  id: string;
+  name: string;
+  content: string;
+  variables: string[];
+  category: "marketing" | "transactional" | "notification" | "custom";
+  createdAt: number;
+  isAI: boolean;
+}
+
+export interface AntiBlockSettings {
+  enabled: boolean;
+  delayBetweenMessages: number; // in seconds
+  messagesPerHour: number;
+  randomizeDelay: boolean;
+  useProxies: boolean;
+  rotateNumbers: boolean;
+  respectBusinessHours: boolean;
+  businessHours: {
+    start: string;
+    end: string;
+    timezone: string;
+  };
+}
+
+export interface BulkUpload {
+  id: string;
+  filename: string;
+  totalContacts: number;
+  validContacts: number;
+  invalidContacts: number;
+  status: "processing" | "completed" | "failed";
+  uploadedAt: number;
+  errors: string[];
+}

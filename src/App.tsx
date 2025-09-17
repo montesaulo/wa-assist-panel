@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/layout/app-sidebar";
 import { AppHeader } from "@/components/layout/app-header";
 import Dashboard from "./pages/Dashboard";
 import Messages from "./pages/Messages";
+import Disparos from "./pages/Disparos";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 import { useAppStore } from "@/store/useAppStore";
@@ -17,7 +18,8 @@ const queryClient = new QueryClient();
 
 const pageTitle: Record<string, string> = {
   "/": "Dashboard",
-  "/messages": "Mensagens", 
+  "/messages": "Mensagens",
+  "/disparos": "Disparos em Massa", 
   "/contacts": "Contatos",
   "/groups": "Grupos",
   "/analytics": "Analytics",
@@ -49,6 +51,12 @@ const App = () => {
                     <>
                       <AppHeader title={pageTitle["/messages"]} />
                       <Messages />
+                    </>
+                  } />
+                  <Route path="/disparos" element={
+                    <>
+                      <AppHeader title={pageTitle["/disparos"]} />
+                      <Disparos />
                     </>
                   } />
                   <Route path="/contacts" element={

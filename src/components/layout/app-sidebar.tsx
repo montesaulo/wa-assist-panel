@@ -10,7 +10,8 @@ import {
   Smartphone,
   Badge as BadgeIcon,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Send
 } from 'lucide-react';
 import { 
   Sidebar, 
@@ -42,6 +43,12 @@ const navigationItems = [
     icon: MessageSquare,
     description: "Gerenciar conversas",
     badge: true
+  },
+  {
+    title: "Disparos",
+    url: "/disparos",
+    icon: Send,
+    description: "Mensagens em massa"
   },
   {
     title: "Contatos",
